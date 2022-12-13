@@ -35,25 +35,25 @@ $(function () {
   // current hour in 24-hour time?
   //
   function changeColor(){
-  var divTime = [];
-  var divTimeEl = $(bodyEl).children().eq(1).children();
-  console.log(divTimeEl.length)
-    for (var i=0; i < 3; i++) {
-      divTime.push(divTimeEl[i])
-    };
-    $(divTime).attr("id")
-    console.log(divTime)
 
-  
   var currentTime = dayjs().format("HH");
+   for(var i = 9; i < 11; i++){
+    if (i == currentTime){
+      var divTime = $("#hour-"+ i).attr('id').split('-')[1]
+      $(divTime).addClass("present")
+      console.log(divTime)
+    } else if (i > currentTime) {
+      var divTime = $("#hour-"+ i).attr('id').split('-')[1]
+      $(divTime).addClass("future")
+      console.log(divTime)
+    } else if( i < currentTime) {
+      var divTime = $("#hour-"+ i).attr('id').split('-')[1]
+      $(divTime).addClass("past")
+      console.log(divTime)
+    }
+   }
   console.log(currentTime)
-  if (newElement == currentTime){
-    this.addClass("present")
-  } else if (newElement > currentTime) {
-    this.addClass("future")
-  } else if( newElement < currentTime) {
-    this.addClass("past")
-  }
+  
 }
 
   // TODO: Add code to get any user input that was saved in localStorage and set
