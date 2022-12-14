@@ -2,6 +2,7 @@
 
 ## Description
 A Work Day scheduler that allows users to save tasks/notes for each hour of the day. It's built using JQuery.
+[Link to the deployed application](https://valfin96.github.io/Work-Day-Scheduler/)
 
 ## How it works
 Step 1: Users opens the scheduler to input events. The scheduler updates color automatically besed on the time of the day, highlighting tasks past-gray; present- red; future-green.
